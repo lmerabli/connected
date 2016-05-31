@@ -45,7 +45,7 @@ doctrine:
         dbname:   "%database_name%"
         user:     "%database_user%"
         password: "%database_password%"
-        unix_socket: /tmp/mysql.sock
+        unix_socket: /var/mysql/mysql.sock
         charset:  UTF8
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
@@ -72,4 +72,4 @@ swiftmailer:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: AppBundle\Entity\User
+    user_class: Co\UserBundle\Entity\User
