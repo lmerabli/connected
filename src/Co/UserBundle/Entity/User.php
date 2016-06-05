@@ -2,13 +2,13 @@
 
 namespace Co\UserBundle\Entity;
 
-use FOS\UserBundle\Entity\User as BaseUser;
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 
 
 /**
- * @ORM\objet_connected
+ * @ORM\Entity()
  * @ORM\Table(name="User")
  */
 class User extends BaseUser
@@ -56,8 +56,6 @@ class User extends BaseUser
      */
 	protected $dat_naiss_cli;
 
-
-
 	/**
      * @ORM\Column(type="string", length=255, unique=true)
      */
@@ -83,11 +81,6 @@ class User extends BaseUser
      */
 	protected $pays_cli;
 	
-
-
-
-
-
 
 	
 } 
