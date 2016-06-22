@@ -27,7 +27,11 @@ class Temperature
      */
 	protected $val_temp;
 
-
+    /**
+    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Session")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    protected $sess_id;
 
 
 
@@ -102,6 +106,30 @@ class Temperature
     protected function setValTemp($val_temp)
     {
         $this->val_temp = $val_temp;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of sess_id.
+     *
+     * @return mixed
+     */
+    public function getSessId()
+    {
+        return $this->sess_id;
+    }
+
+    /**
+     * Sets the value of sess_id.
+     *
+     * @param mixed $sess_id the sess id
+     *
+     * @return self
+     */
+    protected function setSessId(Session $sess_id)
+    {
+        $this->sess_id = $sess_id;
 
         return $this;
     }

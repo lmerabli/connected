@@ -22,8 +22,17 @@ class Choix
      */
 	protected $time_choix;
 
-	
+	/**
+    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Session")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    protected $sess_id;
 
+    /**
+    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Programme")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    protected $prog_id;
 
 
 
@@ -74,6 +83,54 @@ class Choix
     protected function setTimeChoix($time_choix)
     {
         $this->time_choix = $time_choix;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of sess_id.
+     *
+     * @return mixed
+     */
+    public function getSessId()
+    {
+        return $this->sess_id;
+    }
+
+    /**
+     * Sets the value of sess_id.
+     *
+     * @param mixed $sess_id the sess id
+     *
+     * @return self
+     */
+    protected function setSessId(Session $sess_id)
+    {
+        $this->sess_id = $sess_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of prog_id.
+     *
+     * @return mixed
+     */
+    public function getProgId()
+    {
+        return $this->prog_id;
+    }
+
+    /**
+     * Sets the value of prog_id.
+     *
+     * @param mixed $prog_id the prog id
+     *
+     * @return self
+     */
+    protected function setProgId(Programme $prog_id)
+    {
+        $this->prog_id = $prog_id;
 
         return $this;
     }

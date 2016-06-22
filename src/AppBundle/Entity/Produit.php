@@ -50,7 +50,17 @@ class Produit
 	protected $key_prod;
 
 
+    /**
+    * @ORM\ManyToOne(targetEntity="OC\UserBundle\Entity\User")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    protected $cli_id;
 
+    /**
+    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Type")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    protected $typ_id;
 
 
 
@@ -224,6 +234,54 @@ class Produit
     protected function setKeyProd($key_prod)
     {
         $this->key_prod = $key_prod;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of cli_id.
+     *
+     * @return mixed
+     */
+    public function getCliId()
+    {
+        return $this->cli_id;
+    }
+
+    /**
+     * Sets the value of cli_id.
+     *
+     * @param mixed $cli_id the cli id
+     *
+     * @return self
+     */
+    protected function setCliId(User $cli_id)
+    {
+        $this->cli_id = $cli_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of typ_id.
+     *
+     * @return mixed
+     */
+    public function getTypId()
+    {
+        return $this->typ_id;
+    }
+
+    /**
+     * Sets the value of typ_id.
+     *
+     * @param mixed $typ_id the typ id
+     *
+     * @return self
+     */
+    protected function setTypId(Type $typ_id)
+    {
+        $this->typ_id = $typ_id;
 
         return $this;
     }

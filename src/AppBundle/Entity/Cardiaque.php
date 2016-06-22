@@ -27,6 +27,11 @@ class Cardiaque
      */
 	protected $val_card;
 
+    /**
+    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Session")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    protected $sess_id;
 
 
 
@@ -102,6 +107,30 @@ class Cardiaque
     protected function setValCard($val_card)
     {
         $this->val_card = $val_card;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of sess_id.
+     *
+     * @return mixed
+     */
+    public function getSessId()
+    {
+        return $this->sess_id;
+    }
+
+    /**
+     * Sets the value of sess_id.
+     *
+     * @param mixed $sess_id the sess id
+     *
+     * @return self
+     */
+    protected function setSessId(Session $sess_id)
+    {
+        $this->sess_id = $sess_id;
 
         return $this;
     }
