@@ -2,7 +2,7 @@
 
 	namespace Co\UserBundle\Service;
 
-	use Co\UserBundle\Entity\User;
+	use Co\UserBundle\Entity\Client;
 	use Doctrine\ORM\EntityManager;
 	use Doctrine\ORM\Repository\RepositoryFactory;
 

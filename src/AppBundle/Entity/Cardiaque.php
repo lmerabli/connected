@@ -31,7 +31,7 @@ class Cardiaque
     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Session")
     * @ORM\JoinColumn(nullable=false)
     */
-    protected $sess_id;
+    protected $session;
 
 
 
@@ -111,26 +111,28 @@ class Cardiaque
         return $this;
     }
 
+    
+
     /**
-     * Gets the value of sess_id.
+     * Gets the value of session.
      *
      * @return mixed
      */
-    public function getSessId()
+    public function getSession()
     {
-        return $this->sess_id;
+        return $this->session;
     }
 
     /**
-     * Sets the value of sess_id.
+     * Sets the value of session.
      *
-     * @param mixed $sess_id the sess id
+     * @param mixed $session the session
      *
      * @return self
      */
-    protected function setSessId(Session $sess_id)
+    protected function setSession($session)
     {
-        $this->sess_id = $sess_id;
+        $this->session = $session;
 
         return $this;
     }

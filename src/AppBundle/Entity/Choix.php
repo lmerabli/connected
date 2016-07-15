@@ -26,13 +26,13 @@ class Choix
     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Session")
     * @ORM\JoinColumn(nullable=false)
     */
-    protected $sess_id;
+    protected $session;
 
     /**
     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Programme")
     * @ORM\JoinColumn(nullable=false)
     */
-    protected $prog_id;
+    protected $prog;
 
 
 
@@ -87,50 +87,54 @@ class Choix
         return $this;
     }
 
+   
+
+    
+
     /**
-     * Gets the value of sess_id.
+     * Gets the value of session.
      *
      * @return mixed
      */
-    public function getSessId()
+    public function getSession()
     {
-        return $this->sess_id;
+        return $this->session;
     }
 
     /**
-     * Sets the value of sess_id.
+     * Sets the value of session.
      *
-     * @param mixed $sess_id the sess id
+     * @param mixed $session the session
      *
      * @return self
      */
-    protected function setSessId(Session $sess_id)
+    protected function setSession($session)
     {
-        $this->sess_id = $sess_id;
+        $this->session = $session;
 
         return $this;
     }
 
     /**
-     * Gets the value of prog_id.
+     * Gets the value of prog.
      *
      * @return mixed
      */
-    public function getProgId()
+    public function getProg()
     {
-        return $this->prog_id;
+        return $this->prog;
     }
 
     /**
-     * Sets the value of prog_id.
+     * Sets the value of prog.
      *
-     * @param mixed $prog_id the prog id
+     * @param mixed $prog the prog
      *
      * @return self
      */
-    protected function setProgId(Programme $prog_id)
+    protected function setProg($prog)
     {
-        $this->prog_id = $prog_id;
+        $this->prog = $prog;
 
         return $this;
     }

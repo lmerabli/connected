@@ -51,16 +51,16 @@ class Produit
 
 
     /**
-    * @ORM\ManyToOne(targetEntity="OC\UserBundle\Entity\User")
+    * @ORM\ManyToOne(targetEntity="Co\UserBundle\Entity\Client")
     * @ORM\JoinColumn(nullable=false)
     */
-    protected $cli_id;
+    protected $client;
 
     /**
     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Type")
     * @ORM\JoinColumn(nullable=false)
     */
-    protected $typ_id;
+    protected $type;
 
 
 
@@ -238,50 +238,52 @@ class Produit
         return $this;
     }
 
+   
+
     /**
-     * Gets the value of cli_id.
+     * Gets the value of client.
      *
      * @return mixed
      */
-    public function getCliId()
+    public function getClient()
     {
-        return $this->cli_id;
+        return $this->client;
     }
 
     /**
-     * Sets the value of cli_id.
+     * Sets the value of client.
      *
-     * @param mixed $cli_id the cli id
+     * @param mixed $client the client
      *
      * @return self
      */
-    protected function setCliId(User $cli_id)
+    protected function setClient($client)
     {
-        $this->cli_id = $cli_id;
+        $this->client = $client;
 
         return $this;
     }
 
     /**
-     * Gets the value of typ_id.
+     * Gets the value of type.
      *
      * @return mixed
      */
-    public function getTypId()
+    public function getType()
     {
-        return $this->typ_id;
+        return $this->type;
     }
 
     /**
-     * Sets the value of typ_id.
+     * Sets the value of type.
      *
-     * @param mixed $typ_id the typ id
+     * @param mixed $type the type
      *
      * @return self
      */
-    protected function setTypId(Type $typ_id)
+    protected function setType($type)
     {
-        $this->typ_id = $typ_id;
+        $this->type = $type;
 
         return $this;
     }
